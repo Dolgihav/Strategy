@@ -17,8 +17,10 @@ public class Load : MonoBehaviour
     public void load()
     {
         var objs = GameObject.FindGameObjectsWithTag("Cell");
-        for (int i = 0; i < objs.Length; i++)
+        for (int i = 0; i < objs.Length; i++) 
+        {
             Destroy(objs[i]);
+        }
         StreamReader streamReader = new StreamReader("name.txt");
         while (!streamReader.EndOfStream)
         {

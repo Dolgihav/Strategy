@@ -69,6 +69,7 @@
     <Compile Include="Assets\Polygon test assets\MapGenTestLight.cs" />
     <Compile Include="Assets\Polygon test assets\Test_Text_Script_2.cs" />
     <Compile Include="Assets\Polygon test assets\TestCreate.cs" />
+    <Compile Include="Assets\Polygon test assets\TestGetComp.cs" />
     <Compile Include="Assets\Polygon test assets\TestRead.cs" />
     <Compile Include="Assets\Polygon test assets\Text_Test_Script.cs" />
     <Compile Include="Assets\Polygon test assets\Type_Change.cs" />

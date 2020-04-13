@@ -24,6 +24,7 @@ public class Unit : MonoBehaviour
     {
         selected = 1;
         CoordUpd();
+        pathfind();
     }
     private void CoordUpd() 
     {
@@ -35,19 +36,37 @@ public class Unit : MonoBehaviour
     }
     void pathfind() 
     {
+        var objs = GameObject.FindGameObjectsWithTag("Cell");
         for (int i = x-move; i < (move * 2 + 1); i++)
         {
             for (int j = y-move; j < (move * 2 + 1); j++)
             {
+                pathx = x;
+                pathy = y;
                 for (int l = move; l > 0; l--)
                 {
-                    if ((x >= y)||(x==y))
+                    if (i < pathx)
                     {
-
+                        pathx = pathx - 1;
+                        for (int c = 0; i < objs.Length; i++)
+                        {
+                            if (Mathf.FloorToInt(objs[c].transform.position.x) == pathx && Mathf.FloorToInt(objs[c].transform.position.y) == pathy) { Debug.Log(pathx); Debug.Log(pathy); }
+                        }
                     }
-                    else 
+                    else if (i > pathx)
                     {
-
+                        pathx = pathx + 1;
+                    }
+                    else if (i == pathx) 
+                    {
+                        if (y < pathy) 
+                        {
+                            pathy = pathy - 1;
+                        }
+                        else if (i > pathy)
+                        {
+                            pathy = pathy + 1;
+                        }
                     }
                 }
             }
