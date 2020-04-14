@@ -6,6 +6,7 @@ using System.IO;
 public class LVL1 : MonoBehaviour
 {
     PVEMain Main;
+    Unit Unit;
     string text;
     string a;
     int x;
@@ -45,5 +46,24 @@ public class LVL1 : MonoBehaviour
             }
         }
         Main.PVELevelLoad(x, y);
+        var objs3 = GameObject.FindGameObjectsWithTag("Unit");
+        for (int i = 0; i < 128; i++)
+        {
+            for (int j = 0; j < 128; j++)
+            {
+                if (Main.arr[i, j, 1] != 0)
+                {
+                    for (int l = 0; l < objs3.Length; l++)
+                    {
+                        if (Mathf.FloorToInt(objs3[l].transform.position.x) == i && Mathf.FloorToInt(objs3[l].transform.position.y) == j && Main.arr[i, j, 1] != 0)
+                        {
+                            Unit = objs3[l].GetComponent("Unit") as Unit;
+                            Unit.team = int.Parse(text.Substring(0, 1));
+                            text = text.Substring(1);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
