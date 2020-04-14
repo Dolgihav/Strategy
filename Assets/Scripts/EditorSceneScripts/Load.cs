@@ -21,6 +21,11 @@ public class Load : MonoBehaviour
         {
             Destroy(objs[i]);
         }
+        var objs2 = GameObject.FindGameObjectsWithTag("Unit");
+        for (int i = 0; i < objs.Length; i++)
+        {
+            Destroy(objs2[i]);
+        }
         StreamReader streamReader = new StreamReader("name.txt");
         while (!streamReader.EndOfStream)
         {

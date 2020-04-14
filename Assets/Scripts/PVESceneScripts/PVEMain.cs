@@ -8,8 +8,6 @@ public class PVEMain : MonoBehaviour
 {
     public int x;
     public int y;
-    public int selectedx;
-    public int selectedy;
     public int[,,] arr = new int[128, 128, 2];
     public GameObject[] objects;
     public GameObject[] objects2;

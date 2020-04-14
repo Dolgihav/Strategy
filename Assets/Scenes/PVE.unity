@@ -413,8 +413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
-  selectedx: 0
-  selectedy: 0
   objects:
   - {fileID: 8513704928859634100, guid: e31ce5bd87b4b3a4f862e423ab2d342c, type: 3}
   - {fileID: 5282109650844959692, guid: 6402249b8185c8a4b971c04be03db297, type: 3}

@@ -74,6 +74,7 @@
     <Compile Include="Assets\Polygon test assets\Text_Test_Script.cs" />
     <Compile Include="Assets\Polygon test assets\Type_Change.cs" />
     <Compile Include="Assets\Scripts\EditorSceneScripts\ChangeType.cs" />
+    <Compile Include="Assets\Scripts\EditorSceneScripts\ChangeTypeUnit.cs" />
     <Compile Include="Assets\Scripts\EditorSceneScripts\EditorMain.cs" />
     <Compile Include="Assets\Scripts\EditorSceneScripts\Load.cs" />
     <Compile Include="Assets\Scripts\EditorSceneScripts\Save.cs" />

@@ -120,4 +120,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Object: {fileID: 2657246542607401499, guid: 52ea16912d1b1bb458900f7acf82f252, type: 3}
+  Object2: {fileID: 6228797107718130154, guid: 3e0353b7bbd908044b16acafaee37da3, type: 3}
   type: 1

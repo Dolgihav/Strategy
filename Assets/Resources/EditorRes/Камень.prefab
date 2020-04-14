@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6963389520976680378}
   - component: {fileID: 2588346802332579363}
   - component: {fileID: 2270952479609028796}
-  - component: {fileID: 114405118932234510}
+  - component: {fileID: 114596362192246044}
   m_Layer: 0
   m_Name: "\u041A\u0430\u043C\u0435\u043D\u044C"
   m_TagString: Cell
@@ -107,7 +107,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114405118932234510
+--- !u!114 &114596362192246044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,4 +120,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Object: {fileID: 9155021676415800285, guid: 853b1b0682473374784f353616b3f70f, type: 3}
+  Object2: {fileID: 6228797107718130154, guid: 3e0353b7bbd908044b16acafaee37da3, type: 3}
   type: 0

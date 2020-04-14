@@ -12,61 +12,49 @@ public class Unit : MonoBehaviour
     public int type;
     public int x;
     public int y;
+    public GameObject[] objects;
+    PVEMain Main;
     int pathx;
     int pathy;
     public int[,] arr = new int[128, 128];
-    PVEMain Main;
-    private void Start() 
-    {
-        CoordUpd();
-    }
     private void OnMouseDown()
     {
         selected = 1;
-        CoordUpd();
         pathfind();
-    }
-    private void CoordUpd() 
-    {
-        x = Mathf.FloorToInt(transform.position.x);
-        y = Mathf.FloorToInt(transform.position.y);
-        Main = GameObject.FindObjectOfType(typeof(PVEMain)) as PVEMain;
-        Main.selectedx = x;
-        Main.selectedy = y;
     }
     void pathfind() 
     {
         var objs = GameObject.FindGameObjectsWithTag("Cell");
-        for (int i = x-move; i < (move * 2 + 1); i++)
+        Main = GameObject.FindObjectOfType(typeof(PVEMain)) as PVEMain;
+        x = Mathf.FloorToInt(transform.position.x);
+        y = Mathf.FloorToInt(transform.position.y);
+        for (int i = x-move; i < (x+move+1); i++)
         {
-            for (int j = y-move; j < (move * 2 + 1); j++)
+            for (int j = y-move; j < (y+move+1); j++)
             {
                 pathx = x;
                 pathy = y;
                 for (int l = move; l > 0; l--)
                 {
-                    if (i < pathx)
+                    if (pathx < i && Main.arr[pathx + 1, pathy, 0] == 0 && pathx + 1 >-1 && pathx + 1 < 128) 
                     {
-                        pathx = pathx - 1;
-                        for (int c = 0; i < objs.Length; i++)
-                        {
-                            if (Mathf.FloorToInt(objs[c].transform.position.x) == pathx && Mathf.FloorToInt(objs[c].transform.position.y) == pathy) { Debug.Log(pathx); Debug.Log(pathy); }
-                        }
+                        pathx++;
+                        Instantiate(objects[0], new Vector2(pathx, pathy), new Quaternion(0, 0, 0, 0));
                     }
-                    else if (i > pathx)
+                    else if (pathx > i && Main.arr[pathx - 1, pathy, 0] == 0 && pathx - 1 > -1 && pathx - 1 < 128)
                     {
-                        pathx = pathx + 1;
+                        pathx--;
+                        Instantiate(objects[0], new Vector2(pathx, pathy), new Quaternion(0, 0, 0, 0));
                     }
-                    else if (i == pathx) 
+                    else if (pathy < j && Main.arr[pathx, pathy + 1, 0] == 0 && pathy + 1 > -1 && pathy + 1 < 128)
                     {
-                        if (y < pathy) 
-                        {
-                            pathy = pathy - 1;
-                        }
-                        else if (i > pathy)
-                        {
-                            pathy = pathy + 1;
-                        }
+                        pathy++;
+                        Instantiate(objects[0], new Vector2(pathx, pathy), new Quaternion(0, 0, 0, 0));
+                    }
+                    else if (pathy > j && Main.arr[pathx, pathy - 1, 0] == 0 && pathy - 1 > -1 && pathy - 1 < 128)
+                    {
+                        pathy--;
+                        Instantiate(objects[0], new Vector2(pathx, pathy), new Quaternion(0, 0, 0, 0));
                     }
                 }
             }

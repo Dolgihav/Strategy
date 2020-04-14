@@ -54,4 +54,10 @@ public class EditorMain : MonoBehaviour
         if (type != 2) { arr[x, y, 0] = type + 1; }
         else { arr[x, y, 0] = 0; }
     }
+    public void ArrayUpdate2(int x, int y, int type)
+    {
+
+        if (type != 1) { arr[x, y, 1] = type + 1; }
+        else { arr[x, y, 1] = 0; }
+    }
 }
