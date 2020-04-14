@@ -8,6 +8,7 @@ public class Load : MonoBehaviour
 {
     EditorMain Main;
     public InputField Field;
+    ChangeTypeUnit Unit;
     string text;
     string a;
     int x;
@@ -22,7 +23,7 @@ public class Load : MonoBehaviour
             Destroy(objs[i]);
         }
         var objs2 = GameObject.FindGameObjectsWithTag("Unit");
-        for (int i = 0; i < objs.Length; i++)
+        for (int i = 0; i < objs2.Length; i++)
         {
             Destroy(objs2[i]);
         }
@@ -54,5 +55,24 @@ public class Load : MonoBehaviour
             }
         }
         Main.EditorGen2(x,y);
+        var objs3 = GameObject.FindGameObjectsWithTag("Unit");
+        for (int i = 0; i < 128; i++)
+        {
+            for (int j = 0; j < 128; j++)
+            {
+                if (Main.arr[i, j, 1] != 0)
+                {
+                    for (int l = 0; l < objs3.Length; l++)
+                    {
+                        if (Mathf.FloorToInt(objs3[l].transform.position.x) == i && Mathf.FloorToInt(objs3[l].transform.position.y) == j && Main.arr[i, j, 1] != 0)
+                        {
+                            Unit = objs3[l].GetComponent("ChangeTypeUnit") as ChangeTypeUnit;
+                            Unit.team = int.Parse(text.Substring(0, 1));
+                            text = text.Substring(1);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

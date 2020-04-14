@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\EditorSceneScripts\EditorMain.cs" />
     <Compile Include="Assets\Scripts\EditorSceneScripts\Load.cs" />
     <Compile Include="Assets\Scripts\EditorSceneScripts\Save.cs" />
+    <Compile Include="Assets\Scripts\EditorSceneScripts\TeamSelect.cs" />
     <Compile Include="Assets\Scripts\EditorSceneScripts\XText.cs" />
     <Compile Include="Assets\Scripts\EditorSceneScripts\YText.cs" />
     <Compile Include="Assets\Scripts\MenuSceneScripts\Editor_init.cs" />

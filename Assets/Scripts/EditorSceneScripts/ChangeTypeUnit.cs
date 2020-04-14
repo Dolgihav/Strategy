@@ -7,6 +7,7 @@ public class ChangeTypeUnit : MonoBehaviour, IPointerClickHandler
 {
     public GameObject Object;
     EditorMain Main;
+    TeamSelect Select;
     public int type;
     public int team;
     public void OnPointerClick(PointerEventData eventData)
@@ -25,6 +26,15 @@ public class ChangeTypeUnit : MonoBehaviour, IPointerClickHandler
                 Main.ArrayUpdate2(Mathf.FloorToInt(transform.position.x), Mathf.FloorToInt(transform.position.y), type);
                 Destroy(gameObject);
             }
+        }
+    }
+    void Start() 
+    {
+        if (team == 0) 
+        {
+            Select = GameObject.FindObjectOfType(typeof(TeamSelect)) as TeamSelect;
+            if (Select.t == 1) { team = 1; }
+            else if (Select.t == 2) { team = 2; }
         }
     }
 }

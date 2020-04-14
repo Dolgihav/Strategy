@@ -17,6 +17,16 @@ public class EditorMain : MonoBehaviour
     public GameObject[] objects2;
     public void EditorGen()
     {
+        var objs = GameObject.FindGameObjectsWithTag("Cell");
+        for (int i = 0; i < objs.Length; i++)
+        {
+            Destroy(objs[i]);
+        }
+        var objs2 = GameObject.FindGameObjectsWithTag("Unit");
+        for (int i = 0; i < objs2.Length; i++)
+        {
+            Destroy(objs2[i]);
+        }
         xFloat = SliderX.value;
         yFloat = SliderY.value;
         x = Mathf.FloorToInt(xFloat);

@@ -8,6 +8,7 @@ public class Save : MonoBehaviour
 {
     EditorMain Main;
     public InputField Field;
+    ChangeTypeUnit Unit;
     string arrtext;
     string x;
     string y;
@@ -30,6 +31,24 @@ public class Save : MonoBehaviour
             {
                 arrtext = arrtext + Main.arr[i, j, 0];
                 arrtext = arrtext + Main.arr[i, j, 1];
+            }
+        }
+        var objs = GameObject.FindGameObjectsWithTag("Unit");
+        for (int i = 0; i < 128; i++)
+        {
+            for (int j = 0; j < 128; j++)
+            {
+                if (Main.arr[i, j, 1] != 0) 
+                {
+                    for (int l = 0; l < objs.Length; l++)
+                    {
+                        if (Mathf.FloorToInt(objs[l].transform.position.x) == i && Mathf.FloorToInt(objs[l].transform.position.y) == j && Main.arr[i, j, 1] != 0) 
+                        {
+                            Unit = objs[l].GetComponent("ChangeTypeUnit") as ChangeTypeUnit;
+                            arrtext = arrtext + Unit.team;
+                        }
+                    }
+                }
             }
         }
         Field.text = "";

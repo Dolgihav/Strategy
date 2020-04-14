@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 61092535739883130}
   m_Layer: 0
   m_Name: "\u0422\u0435\u0441\u0442\u042E\u043D\u0438\u0442"
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Object: {fileID: 0}
   type: 1
+  team: 0
 --- !u!61 &61092535739883130
 BoxCollider2D:
   m_ObjectHideFlags: 0
